@@ -5,12 +5,38 @@
 <!--EXTERNAL stylesheet -->
 <link href="./path/style.css" rel="stylesheet" type="text/css" />
 
+<!DOCTYPE html>
+<html lang = "en-US">
+ <head>
+ <meta charset = "UTF-8">
+ <title>externalStyle.html</title>
+ <link rel = "stylesheet"
+   type = "text/css"
+   href = "mystyle.css" />
+ </head>
+</html>
+
 <!-- INTERNAL stylesheet -->
 <style>
   body {
     background-color: linen;
   }
 </style>
+
+<head>
+<style type="text/css">
+
+    h1 {
+            color:#fff
+            margin-left: 20px;
+       }
+
+    p {
+        font-family: Arial, Helvetica, Sans Serif;     
+       }
+
+</style>
+</head>
 
 <!-- INLINE styles -->
 <h2 style="text-align: center;">Centered text</h2>
@@ -26,12 +52,54 @@
 --------------------------------------------------------------------------------------------------------------------
 <!-- SELECTOR types
     Selector { Property: Value; }
-    H1{ color: blue; } - Element selector
-  .box{ color: blue; }  - Class selector
-#unique{ color: blue; } - ID selector
+    H1{ color: blue; } - Element selector - It will select all elements of that type that appear on a page
+  .box{ color: blue; }  - Class selector -  It will select only the elements on a page that have a specific class attribute value
+#unique{ color: blue; } - ID selector - it will select only the elements on a page that have a specific id attribute
 p, .red, #sub, div a:link { color: #f00; } - multiple selectors of diffferent types - paragraph element / class of red / ID of sub / link pesudo class
 
----------------------------------------------------------------------------------------
+The universal selector is indicated by an asterisk (*). 
+It selects everything in the document (or inside the parent element if it is being chained together with another element and 
+a descendant combinator).
+
+PARENT ELEMENT
+
+https://www.openbookproject.net/tutorials/getdown/css/lesson4.html
+<body> ANCESTOR
+
+  <div id="content"> 
+    <h1>Heading here</h1> DECENDENTS OF DIV
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor <em>sit</em> amet.</p>
+    <hr>
+  </div>
+  
+  <div id="nav"> PARENT
+    <ul> CHILD
+      <li>item 1</li> SIBLINGS (SAME PARENT)
+      <li>item 2</li> SIBLINGS (SAME PARENT)
+      <li>item 3</li> SIBLINGS (SAME PARENT)
+    </ul>
+  </div>
+
+</body>
+
+DESCENDANT COMBINATOR
+
+The descendant combinator — typically represented by a single space (" ") character 
+— combines two selectors such that elements matched by the second selector are selected if they have an ancestor
+(parent, parent's parent, parent's parent's parent, etc.) element matching the first selector. 
+Selectors that utilize a descendant combinator are called descendant selectors.
+
+/* List items that are descendants of the "my-things" list */
+ul.my-things li {
+  margin: 2em;
+}
+
+https://css.maxdesign.com.au/selectutorial/index.htm
+https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors
+
+--------------------------------------------------------------------------------------
 CSS PSEUDO-CLASS is used to define a special state of an element
 
 selector:pseudo-class {
@@ -77,6 +145,11 @@ div > p {
   background-color: yellow;
 }
 means selects all <p> elements that are children of a <div> element:
+---------------------------------------------------
+ATTRIBUTE SELECTORS
+
+a[title] {
+}
 
 ---------------------------------------------------------------------------------------------
 DECLARATION BLOCK
