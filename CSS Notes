@@ -1,0 +1,112 @@
+<!-- CASCADING STYLE SHEETS (CSS) -->
+
+<!-- ADD TO HTML IN 3 WAYS -->
+
+<!--EXTERNAL stylesheet -->
+<link href="./path/style.css" rel="stylesheet" type="text/css" />
+
+<!-- INTERNAL stylesheet -->
+<style>
+  body {
+    background-color: linen;
+  }
+</style>
+
+<!-- INLINE styles -->
+<h2 style="text-align: center;">Centered text</h2>
+<p style="color: blue; font-size: 18px;">Blue, 18-point text</p>
+
+----------------------------------------------------------------------------------------------------------
+<!-- 
+            In CSS, a DECLARATION is the key-value pair of a CSS property and its value. 
+            CSS declarations are used to set style properties and construct rules to apply to individual or groups of elements.
+            The property name and value are separated by a colon, and the entire declaration must be terminated by a semi-colon. 
+-->
+
+--------------------------------------------------------------------------------------------------------------------
+<!-- SELECTOR types
+    Selector { Property: Value; }
+    H1{ color: blue; } - Element selector
+  .box{ color: blue; }  - Class selector
+#unique{ color: blue; } - ID selector
+p, .red, #sub, div a:link { color: #f00; } - multiple selectors of diffferent types - paragraph element / class of red / ID of sub / link pesudo class
+
+---------------------------------------------------------------------------------------
+CSS PSEUDO-CLASS is used to define a special state of an element
+
+selector:pseudo-class {
+  property: value;
+}
+
+/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+      Style an element when a user mouses over it
+      Style visited and unvisited links differently
+      Style an element when it gets focus
+-----------------------------------------------------------------
+CSS PSEUDO-ELEMENT is used to style specified parts of an element
+
+selector::pseudo-element {
+  property: value;
+}
+
+p::first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+
+      Style the first letter, or line, of an element
+      Insert content before, or after, the content of an element
+
+-----------------------------------------------------------------------------------------
+COMBINATOR
+descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~)
+
+div > p {
+  background-color: yellow;
+}
+means selects all <p> elements that are children of a <div> element:
+
+---------------------------------------------------------------------------------------------
+DECLARATION BLOCK
+
+= Selector {Property: Value;} 
+
+h1 {
+  margin: 0 auto;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-style: italic;
+  color: rebeccapurple;
+}
+
+------------------------------------------------------------------------------------------------
+PROPERTY
+
+display - https://www.w3schools.com/css/css_display_visibility.asp
+position 
+overflow 
+float 
+border 
+padding 
+margin 
+background-image
+border-collapse 
+border-spacing 
+opacity 
+gradients
+Text
+font-family
+list-style-type 
+float
+a:link
