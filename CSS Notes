@@ -50,17 +50,84 @@
 -->
 
 --------------------------------------------------------------------------------------------------------------------
+
+CSS CLASSES / ELEMENTS / IDS
+In CSS, a CLASS is a group of HTML (page) elements that are the same or similar. You can have as many HTML elements as you want in a CSS class. And each HTML element can be the member of multiple CSS classes. Every CSS class has CSS attributes (like color and font-size) that are specific to that class.
+
+CSS classes are similar to a real-life class. A class is a group of students, who often share certain similarities: similar ages, area codes, interests, or life goals.
+
+An CSS ID is a singular identifier of one HTML tag. You can only have one HTML tag per ID and each HTML tag can only have one ID. Each ID has a specific set of CSS attributes that only apply to that one element.
+
+To go back to our real-life class example, even if a group of students shares many attributes, each student has their own Social Security number that identifies them and only them.
+
+CLASS CREATION
+You can use CSS classes to group HTML elements and then apply custom styles to them. You can make classes and apply them to text, buttons, spans and divs, tables, images, or just about any other page element you can think of
+
+<p>Our <span>marketing software</span> and <span>service platform</span> provide you with the tools you need to <span>engage</span> visitors, <span>convert</span> them to leads, and <span>win them over</span> as customers.</p> 
+
+/* declaration for our first CSS class */ 
+    .orange-text { 
+    color: orange; 
+    font-weight: bold; 
+    } 
+     
+    /* declaration for our second CSS class */ 
+    .blue-text { 
+    color: blue; 
+    font-weight: bold; 
+    } 
+
+<p>Our <span class="orange-text">marketing software</span> and <span class="orange-text">service platform</span> provide you with the tools you need to <span class="blue-text">engage</span> visitors, <span class="blue-text">convert</span> them to leads, and <span class="blue-text">win them over</span> as customers.</p> 
+
+1. Open up your HTML document. 
+2. Locate or create the element you want to style
+3. Add the CSS class declaration to the opening tag of the HTML element
+<div class="class-example">This is a div I'd like to style with a CSS class.</div> 
+    <div>This is a div I'll be leaving alone.</div> 
+4. Open up your CSS file
+5. Create the CSS class and its destinations
+ .class-example{ 
+    }
+6. Apply the CSS class to multiple HTML elements
+<div class="class-example">This is the first div I'd like to style with my new CSS class.</div> 
+    <div>This is a div I'll be leaving alone.</div> 
+    <div class="class-example">This is the second div I'd like to style with the same CSS class.</div> 
+   
+
+
+
+ID v CLASS
+"consensus holds that it’s worth using ID for elements that appear once per page — such as headers, footers, or menus — while class is used for elements such as paragraphs, links, and buttons that appear more than once. As noted above, IDs can be used in conjunction with classes. For example, two button elements might have the same classes to define their basic size and style, but different IDs to determine their position on the page." https://blog.hubspot.com/website/what-is-css-class
+
+
+--------------------------------------------------------------------------------------
+RULE SET
 <!-- SELECTOR types
     Selector { Property: Value; }
     H1{ color: blue; } - Element selector - It will select all elements of that type that appear on a page
   .box{ color: blue; }  - Class selector -  It will select only the elements on a page that have a specific class attribute value
 #unique{ color: blue; } - ID selector - it will select only the elements on a page that have a specific id attribute
-p, .red, #sub, div a:link { color: #f00; } - multiple selectors of diffferent types - paragraph element / class of red / ID of sub / link pesudo class
+p, .red, #sub, div a:link { color: #f00; } - multiple selectors of different types - paragraph element / class of red / ID of sub / link pesudo class
 
-The universal selector is indicated by an asterisk (*). 
+/* CHAINING SELECTOR */
+div.hero { }
+div > p { }
+
+.classname1.classname2 - /* Selects all elements with both name1 and name2 set within its class attribute */
+.classname1 .classname2 - see SPACE - select all elements with name2 that is a child of an element with name1 */
+element, element - /* Selects all of both elements */
+element element - select all second element inside first element */
+element>element - /* Selects all second elements where the first element is the parent */
+element+element - /* Selects all second elements that are placed immediately after the first element */
+[attribute^=value] = /* Selects every <a> element whose href attribute value begins with "https" */
+[attribute$=value] = /* Selects every <a> element whose href attribute value ends with ".pdf" */
+::before - /* Inserts something before the content of each <p> element */
+
+---------------------------------------------------------------------------
+The UNIVERSAL SELECTOR is indicated by an asterisk (*). 
 It selects everything in the document (or inside the parent element if it is being chained together with another element and 
 a descendant combinator).
-
+------------------------------------------------------------------------
 PARENT ELEMENT
 
 https://www.openbookproject.net/tutorials/getdown/css/lesson4.html
@@ -82,7 +149,7 @@ https://www.openbookproject.net/tutorials/getdown/css/lesson4.html
   </div>
 
 </body>
-
+-----------------------------------------------------------------------------
 DESCENDANT COMBINATOR
 
 The descendant combinator — typically represented by a single space (" ") character 
@@ -93,6 +160,11 @@ Selectors that utilize a descendant combinator are called descendant selectors.
 /* List items that are descendants of the "my-things" list */
 ul.my-things li {
   margin: 2em;
+}
+
+/* FIRST CHILD SELECTOR */
+p:first-child {
+  font-weight: bold;
 }
 
 https://css.maxdesign.com.au/selectutorial/index.htm
@@ -150,6 +222,10 @@ ATTRIBUTE SELECTORS
 
 a[title] {
 }
+
+/* Attribute selectors */
+a[href="https://example.com"]
+{ }
 
 ---------------------------------------------------------------------------------------------
 DECLARATION BLOCK
