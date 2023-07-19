@@ -92,19 +92,50 @@ You can use CSS classes to group HTML elements and then apply custom styles to t
 <div class="class-example">This is the first div I'd like to style with my new CSS class.</div> 
     <div>This is a div I'll be leaving alone.</div> 
     <div class="class-example">This is the second div I'd like to style with the same CSS class.</div> 
-   
-
-
 
 ID v CLASS
 "consensus holds that it’s worth using ID for elements that appear once per page — such as headers, footers, or menus — while class is used for elements such as paragraphs, links, and buttons that appear more than once. As noted above, IDs can be used in conjunction with classes. For example, two button elements might have the same classes to define their basic size and style, but different IDs to determine their position on the page." https://blog.hubspot.com/website/what-is-css-class
 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class
+
+CSS
+.note {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.editorial {
+    background: rgb(255, 0, 0, 0.25);
+    padding: 10px;
+}
+
+.editorial:before {
+    content: 'Editor: ';
+}
+
+HTML
+<p>Narrator: This is the beginning of the play.</p>
+
+<p class="note editorial">Above point sounds a bit obvious. Remove/rewrite?</p>
+
+<p>Narrator: I must warn you now folks that this beginning is very exciting.</p>
+
+<p class="note">[Lights go up and wind blows; Caspian enters stage right]</p>
+
+OUTPUT
+Narrator: This is the beginning of the play.
+
+Editor: Above point sounds a bit obvious. Remove/rewrite? - bold and italic inside red square with 'Editor:' at beginning
+
+Narrator: I must warn you now folks that this beginning is very exciting.
+
+[Lights go up and wind blows; Caspian enters stage right] - bold and italic
 
 --------------------------------------------------------------------------------------
 RULE SET
 <!-- SELECTOR types
     Selector { Property: Value; }
-    H1{ color: blue; } - Element selector - It will select all elements of that type that appear on a page
+    H1{ color: blue; } - Element/Type/Tag Name selector - It will select all elements of that type that appear on a page
   .box{ color: blue; }  - Class selector -  It will select only the elements on a page that have a specific class attribute value
 #unique{ color: blue; } - ID selector - it will select only the elements on a page that have a specific id attribute
 p, .red, #sub, div a:link { color: #f00; } - multiple selectors of different types - paragraph element / class of red / ID of sub / link pesudo class
@@ -227,6 +258,47 @@ a[title] {
 a[href="https://example.com"]
 { }
 
+--------------------------------------------------------------------
+
+MORE SELECTORS
+
+!IMPORTANT
+Overrides all previous styling rules.
+
+.post-title {
+  color: blue !important;
+}
+
+TEXT COLOR
+color: #00ff00;
+color: green;
+color: rgb(214, 122, 127);
+color: hsla(30, 100%, 50%, .3);
+
+BACKGROUND
+background-color: blue;
+background-image: url("../../media/examples/cat.png");
+
+FONT
+.page-title {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Courier New";
+}
+
+POSITION
+.box {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+COMMENT
+/* This is a single line comment */
+
+/* This is a 
+   multi-line comment */
+
 ---------------------------------------------------------------------------------------------
 DECLARATION BLOCK
 
@@ -259,3 +331,68 @@ font-family
 list-style-type 
 float
 a:link
+
+-------------------------------------------------------------------------------------------------------
+CSS LAYOUT
+
+LAYOUT OPTIONS
+Normal flow
+The display property
+Flexbox
+Grid
+Floats
+Positioning
+Table layout
+Multiple-column layout
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction
+
+
+CSS THE BOX MODEL
+
+The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content and allows us to add a border around elements, and to define space between elements.
+
+FLEX LAYOUT
+CSS FLEXBOX: The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure.
+To start using the Flexbox model, you need to first define a flex container. The flex container becomes flexible by setting the display property to flex.
+
+https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox
+
+GRID LAYOUT
+CSS GRID: Many web pages are based on a grid-view, which means that the page is divided into columns. It is very helpful when designing web pages. It makes it easier to place elements on the page. A responsive grid-view often has 12 columns, and has a total width of 100%, and will shrink and expand as you resize the browser window.
+
+https://www.w3schools.com/css/css_grid.asp
+
+RESPONSIVE
+Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones), by using for example:
+Media Queries: With media queries you can define completely different styles for different browser sizes.
+Using the max-width Property in width size
+Setting The Viewport. The viewport is the user's visible area of a web page [<meta name="viewport" content="width=device-width, initial-scale=1.0">].
+
+https://www.w3schools.com/css/css_templates.asp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
