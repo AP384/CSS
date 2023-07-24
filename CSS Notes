@@ -346,7 +346,7 @@ Table layout
 Multiple-column layout
 
 https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction
-
+----------------------------------------------------------------------
 
 CSS THE BOX MODEL
 
@@ -363,10 +363,14 @@ div {
   margin: 0;
 }
 https://www.w3schools.com/css/css_boxmodel.asp
-
+----------------------------------------------------------------------------
 FLEX LAYOUT
 CSS FLEXBOX: The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure.
 To start using the Flexbox model, you need to first define a flex container. The flex container becomes flexible by setting the display property to flex.
+
+* {
+  box-sizing: border-box;
+}
 
 <!DOCTYPE html>
 <html>
@@ -402,12 +406,44 @@ To start using the Flexbox model, you need to first define a flex container. The
 </body>
 </html>
 https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox
-
+----------------------------------------------------------------------------------
 GRID LAYOUT
 CSS GRID: Many web pages are based on a grid-view, which means that the page is divided into columns. It is very helpful when designing web pages. It makes it easier to place elements on the page. A responsive grid-view often has 12 columns, and has a total width of 100%, and will shrink and expand as you resize the browser window.
 
-https://www.w3schools.com/css/css_grid.asp
+* {
+  box-sizing: border-box;
+}
 
+.menu {
+  width: 25%;
+  float: left;
+}
+.main {
+  width: 75%;
+  float: left;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+
+https://www.w3schools.com/css/css_grid.asp
+---------------------------------------------------------------------------------
 RESPONSIVE
 Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones), by using for example:
 Media Queries: With media queries you can define completely different styles for different browser sizes.
@@ -415,14 +451,94 @@ Using the max-width Property in width size
 Setting The Viewport. The viewport is the user's visible area of a web page [<meta name="viewport" content="width=device-width, initial-scale=1.0">].
 
 https://www.w3schools.com/css/css_templates.asp
+-----------------------------------------------------------------------------------
+RESET STYLE
+The goal of a reset stylesheet is to reduce browser inconsistencies in things like default line heights, margins and font sizes of headings, and so on.
+The reset styles given here are intentionally very generic. There isn't any default color or background set for the body element, for example. I don't particularly recommend that you just use this in its unaltered state in your own projects. It should be tweaked, edited, extended, and otherwise tuned to match your specific reset baseline. Fill in your preferred colors for the page, links, and so on.
 
+A CSS Reset (or “Reset CSS”) is a short, often compressed (minified) set of CSS rules that resets the styling of all HTML elements to a consistent baseline.
 
+In case you didn’t know, every browser has its own default ‘user agent’ stylesheet, that it uses to make unstyled websites appear more legible. For example, most browsers by default make links blue and visited links purple, give tables a certain amount of border and padding, apply variable font-sizes to H1, H2, H3 etc. and a certain amount of padding to almost everything. Ever wondered why Submit buttons look different in every browser?
 
+Obviously this creates a certain amount of headaches for CSS authors, who can’t work out how to make their websites look the same in every browser.
 
+Using a CSS Reset, CSS authors can force every browser to have all its styles reset to null, thus avoiding cross-browser differences as much as possible
 
+/* Groups Selector */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
+------------------------------------------------------------------
+OVERVIEW
 
+Selector	Description
+*	All elements
+div	All div tags
+.classname	All elements with class
+#idname	Element with ID
+div,p	All divs and paragraphs
+#idname *	All elements inside #idname
+--------------------	-------------------------------------
+div.classname	Div with certain classname
+div#idname	Div with certain ID
+div p	Paragraphs inside divs
+div > p	All p tags; one level deep in div
+div + p	P tags immediately after div
+div ~ p	P tags preceded by div
+--------------------	-------------------------------------
+a[target]	With a target attribute
+a[target="_blank"]	Open in new tab
+a[href^="/index"]	Starts with /index
+[class*="chair"]	containing chair
+[title~="chair"]	Contains the word chair
+a[href$=".doc"]	Ends with .doc
+[type="button"]	Specified type
+-----------------------	--------------------------
+p:first-child	First child
+p:last-child	Last child
+p:first-of-type	First of some type
+p:last-of-type	Last of some type
+p:nth-child(2)	Second child of its parent
+p:nth-child(3n42)	Nth-child (an + b) formula
+p:nth-last-child(2)	Second child from behind
+p:nth-of-type(2)	Second p of its parent
+p:nth-last-of-type(2)	...from behind
+p:only-of-type	Unique of its parent
+p:only-child	Only child of its parent
 
 
 
