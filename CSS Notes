@@ -351,11 +351,56 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction
 CSS THE BOX MODEL
 
 The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content and allows us to add a border around elements, and to define space between elements.
+Content - The content of the box, where text and images appear
+Padding - Clears an area around the content. The padding is transparent
+Border - A border that goes around the padding and content
+Margin - Clears an area outside the border. The margin is transparent
+Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+div {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+https://www.w3schools.com/css/css_boxmodel.asp
 
 FLEX LAYOUT
 CSS FLEXBOX: The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure.
 To start using the Flexbox model, you need to first define a flex container. The flex container becomes flexible by setting the display property to flex.
 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>Create a Flex Container</h1>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+
+<p>A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em>.</p>
+
+<p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+
+</body>
+</html>
 https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox
 
 GRID LAYOUT
