@@ -1,0 +1,288 @@
+CSS SELECTORS
+
+<style>
+p{color:red;}
+</style>
+ - Element selector, in this case <p>
+
+<style>
+#para1 {color: red;}
+</style>
+<body>
+  <h1>This is a heading</h1>
+  <p id="para1">This is a paragraph</p>
+</body>
+ - ID selector, signified by #, in this case 'para1'
+
+<style>
+.colortext {color: red;}
+</style>
+<body>
+  <h1>This is a heading</h1>
+  <p>This is a paragraph</p>
+  <p class="colortext">This is a paragraph</p>
+  <p class="colortext">This is a paragraph</p>
+</body>
+ - Class selector, signified by ., in this case 'colortext'
+
+<style>
+h1, p {color: red;}</style>
+<body>
+  <h1>This is a heading</h1>
+  <h2>This is a smaller heading</h2>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+</body>
+ - multiple element selectors
+
+There are four different combinators in CSS:
+
+descendant selector (space) - div p { -  selects all <p> elements inside <div> elements
+child selector (>) - div > p { - selects all <p> elements that are children of a <div> element
+adjacent sibling selector (+) - div + p { - selects the first <p> element that are placed immediately after <div> elements:
+general sibling selector (~) - div ~ p { - selects all <p> elements that are next siblings of <div> elements
+---------------------------------------------------------------------------
+
+CSS BACKGROUND
+
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+background (shorthand property)
+opacity / RGBA - div {background-color: green;opacity: 0.3;} or div {background: rgba(0, 128, 0, 0.3)}
+
+
+With CSS, a color is most often specified by:
+
+a valid color name - like "red"
+a HEX value - like "#ff0000"
+an RGB value - like "rgb(255,0,0)"
+
+<style>
+body {background-image: url("paper.gif");}
+</style>
+ - using a background image
+
+<style>
+body {background-image: url("img_tree.png");background-repeat: repeat-y;}
+</style>
+ - background image repeated vertically (x for horizontal)
+
+<style>
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+</style>
+<body>
+  <h1>This is a heading</h1>
+  <p>This is a paragraph</p>
+  <p>This is a paragraph</p>
+</body>
+ - background image only in top right, no repeat
+
+<style>
+body {background-image: url("img_tree.png");background-attachment: fixed}
+</style>
+ - background image does not scroll
+------------------------------------------------------------------------
+
+BOX MODEL
+
+Content - The content of the box, where text and images appear
+Padding - Clears an area around the content. The padding is transparent
+Border - A border that goes around the padding and content
+Margin - Clears an area outside the border. The margin is transparent
+
+<style>
+div{width: 200px;}
+</style>
+ - setting width
+
+<style>
+div {width: 200px;border: 2px solid red;}
+</style>
+ - setting border width
+
+<style>
+div {width: 200px;border: 2px solid red;  padding: 25px;}
+</style>
+ - setting padding - between border and content
+
+<style>
+div {
+  width: 200px;
+  border: 2px solid red;  
+  padding: 25px;
+  margin-left: 25px;
+}
+</style>
+ - add 25px outside to left
+-----------------------------------------------------------------------------------------------------
+
+BORDERS
+
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border
+hidden - Defines a hidden border
+
+
+<style>
+p {border: 4px dotted red;}
+</style>
+ - multiple border requests in shorthand
+
+<style>
+p {border-left-style: dotted;}
+</style>
+ - left border to be dotted
+
+<style>
+p {border: 2px solid red;border-radius: 5px;}
+</style>
+ - solid rounded borders in red
+------------------------------------------------------------------------------
+
+MARGINS
+
+CSS has properties for specifying the margin for each side of an element:
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+All the margin properties can have the following values:
+auto - the browser calculates the margin
+length - specifies a margin in px, pt, cm, etc.
+% - specifies a margin in % of the width of the containing element
+inherit - specifies that the margin should be inherited from the parent element
+Tip: Negative values are allowed.
+
+<style>
+h1 {margin-left: 20px;}
+</style>
+ - adds 20px left margin
+
+The margin property is a shorthand property for the following individual margin properties:
+
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+<style>
+h1 {margin: 20px 40px;}
+</style>
+ -  add 20 pixels top and bottom margins, and 40 pixels left and right margins, on the <h1> element.
+
+<style>
+h1 {margin: auto;}
+</style>
+ - centre align H1 element
+-------------------------------------------------------------------------
+
+PADDING
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+<style>
+h1 {padding:40px 10px;}
+</style>
+ - 10 pixels left and right padding, and 40 pixels top and bottom padding, on the <h1> element.
+-----------------------------------------------------------------------------
+
+TEXT
+
+<style>
+p {color: red;}
+</style>
+ - all text red
+
+text-align
+text-align-last
+direction
+unicode-bidi
+vertical-align
+
+<style>
+p {text-align: center;}
+<style>
+ - text centre aligned
+
+text-decoration-line
+text-decoration-color
+text-decoration-style
+text-decoration-thickness
+text-decoration
+
+<style>
+a {text-decoration: none;}
+</style>
+ - removes line under HTML link
+
+<style>
+h1 {text-transform: uppercase;}
+p {text-transform: capitalize;}
+</style>
+ - transform lettering 
+
+text-indent
+letter-spacing
+line-height
+word-spacing
+white-space
+text-shadow
+-------------------------------------------------------------------
+
+FONT
+
+<style>
+h1 {font-family: Verdana;}
+</style>
+ - defining font
+
+<style>
+h1 {font-style: italic;}
+</style>
+ - define font style
+
+<style>
+h1 {font-size: 50px;}
+</style>
+
+<style>
+p {font-weight: bold;}
+</style>
+ - weight of the font
+
+<style>
+p {font-variant: small-caps;}
+</style>
+ - small upper case letters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
